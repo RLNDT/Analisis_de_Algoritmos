@@ -130,7 +130,6 @@ def heapify(arr, n, i):
         # Recursively heapify the affected sub-tree
         heapify(arr, n, largest)
 
-# Main function to do heap sort
 def heapSort(arr):
     
     n = len(arr) 
@@ -162,13 +161,24 @@ def printArray(arr):
         print(arr[i], end=" ")
     print()
 
-# Generate arrays of different sizes
-small_array = [random.randint(0, 10100) for _ in range(10000)]
-medium_array = [random.randint(0, 20100) for _ in range(20000)]
-large_array = [random.randint(0, 30100) for _ in range(30000)]
+#small_array = [random.randint(0, 600) for _ in range(500)]
+#medium_array = [random.randint(0, 4100) for _ in range(3000)]
+large_array = [random.randint(0, 31100) for _ in range(30000)]
 
-# Driver code to test above
-print("Testing small array:")
+
+start = time.time()
+#insertionSort(large_array)
+#selection_sort(large_array)
+#bubbleSort(large_array)
+#merge_sort(large_array, 0, len(large_array) - 1)
+#heapSort(large_array)
+quickSort(large_array)
+end = time.time()
+print("Tiempo de Ejecucion: "+ str(end - start))
+
+
+"""
+print("Testin small array:")
 arr = small_array.copy()
 start = time.time()
 insertionSort(arr)
@@ -294,4 +304,4 @@ start = time.time()
 arr = quickSort(arr)
 end = time.time()
 print(end - start)  
-
+"""
